@@ -6,10 +6,10 @@
     </div>
     <div class="col-10">
         <div class="row">
-            <p class="year-album">1989</p>
+            <p class="year-album">{{albumModel.year}}</p>
         </div>
         <div class="row">
-            <p class="name-album">Live At Fire Australia</p>
+            <p class="name-album">{{albumModel.title}}</p>
         </div>
         <div class="row"></div>
         <div class="row">
@@ -23,30 +23,17 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Title</th>
+                <th scope="col">Featuring</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+            <tr *ngFor="let song of albumModel.songs">
+                <th scope="row">{{song.num}}</th>
+                <td>{{song.title}}</td>
+                <td>{{song.featuring}}</td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
+
         </tbody>
     </table>
 </div>
