@@ -28,12 +28,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let song of albumModel.songs">
+            <tr *ngFor="let song of albumModel.songs" (click)="viewSongDetail(song)">
                 <th scope="row">{{song.num}}</th>
                 <td>{{song.title}}</td>
                 <td>{{song.featuring}}</td>
             </tr>
-
         </tbody>
     </table>
+</div>
+<div class="row">
+  <div class="col-12">
+    <song-detail *ngIf="songDetail" [song]="songDetail"></song-detail>
+  </div>
 </div>
