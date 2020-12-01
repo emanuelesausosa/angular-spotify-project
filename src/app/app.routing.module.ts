@@ -17,6 +17,11 @@ const routes: Routes = [
     path: 'song/:id',
     component: SongDetailComponent,
   },
+  {
+    path: '',
+    redirectTo: '/album',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

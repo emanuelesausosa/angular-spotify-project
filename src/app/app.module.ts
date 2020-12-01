@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlbumComponent } from './features/album/album.component';
 import { SongDetailComponent } from './features/song-detail/song-detail.component';
 import { FooComponent } from './features/foo/foo.component';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { FooComponent } from './features/foo/foo.component';
     SongDetailComponent,
     FooComponent,
   ],
-  imports: [BrowserModule, NgbModule],
+  imports: [BrowserModule, NgbModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
