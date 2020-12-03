@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ALBUM_DATA } from '../../common/models/mocks/album-data.mock';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'album-cmp',
@@ -10,7 +11,9 @@ export class AlbumComponent {
   songDetail: any;
   albumModel: any = ALBUM_DATA;
 
+  constructor(private router: Router) {}
+
   viewSongDetail(song: any): void {
-    this.songDetail = song;
+    this.router.navigate(['/song', song.num]);
   }
 }
