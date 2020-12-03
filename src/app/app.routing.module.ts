@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AlbumComponent } from './features/album/album.component';
 import { FooComponent } from './features/foo/foo.component';
 import { SongDetailComponent } from './features/song-detail/song-detail.component';
+import { TestingComponent } from './features/testing-cmp/testing.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/album',
     pathMatch: 'full',
+  },
+  {
+    path: 'testing',
+    component: TestingComponent,
   },
 ];
 

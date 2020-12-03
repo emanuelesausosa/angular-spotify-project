@@ -7,6 +7,7 @@ import { AlbumComponent } from './features/album/album.component';
 import { SongDetailComponent } from './features/song-detail/song-detail.component';
 import { FooComponent } from './features/foo/foo.component';
 import { AppRoutingModule } from './app.routing.module';
+import { TestingComponent } from './features/testing-cmp/testing.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { AppRoutingModule } from './app.routing.module';
     AlbumComponent,
     SongDetailComponent,
     FooComponent,
+    TestingComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule],
   providers: [],
