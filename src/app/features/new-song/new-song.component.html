@@ -1,0 +1,21 @@
+<form>
+    <div class="form-group">
+        <label for="song-title">song title</label>
+        <input type="text" class="form-control" id="song-title" name="title" placeholder="song title"
+            [(ngModel)]="song.title"
+            (keyup)="printConsole()">
+    </div>
+    <div class="form-group">
+        <label for="song-description">song description</label>
+        <input type="text" class="form-control" id="song-description" name="description"
+            placeholder="simple description" [(ngModel)]="song.description">
+    </div>
+    <div class="form-group">
+        <label for="song-featuring">song featuring</label>
+        <input type="text" class="form-control" id="song-featuring" name="featuring" placeholder="featuring"
+            [(ngModel)]="song.featuring">
+    </div>
+    <button type="button" 
+    class="btn btn-primary"
+    (click)="save()">Save</button>
+</form>
