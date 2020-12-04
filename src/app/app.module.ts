@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { TestingComponent } from './features/testing-cmp/testing.component';
 import { NewSongComponent } from './features/new-song/new-song.component';
 import { FormsModule } from '@angular/forms';
+import { AlbumDataService } from './common/services/album-data.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     NewSongComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [AlbumDataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
