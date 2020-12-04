@@ -18,4 +18,21 @@ export class AlbumDataService {
   }
 
   // 3. add new song to data
+  addNewSong(song: Song): boolean {
+    // buscar dentro de ALBUM_DATA la última song
+    // -: obtendremos el id de la ultima son
+    try {
+      let lastId =
+        ALBUM_DATA.songs.length === 0
+          ? 0
+          : ALBUM_DATA.songs[ALBUM_DATA.songs.length - 1].num;
+      song.num = lastId + 1;
+      ALBUM_DATA.songs.push(song);
+
+      return true;
+    } catch (err) {
+      console.error(err);
+      return false;
+    }
+  }
 }
