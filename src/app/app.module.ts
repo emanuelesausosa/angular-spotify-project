@@ -11,6 +11,7 @@ import { TestingComponent } from './features/testing-cmp/testing.component';
 import { NewSongComponent } from './features/new-song/new-song.component';
 import { FormsModule } from '@angular/forms';
 import { AlbumDataService } from './common/services/album-data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,13 @@ import { AlbumDataService } from './common/services/album-data.service';
     TestingComponent,
     NewSongComponent,
   ],
-  imports: [BrowserModule, NgbModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    NgbModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+  ],
   providers: [AlbumDataService],
   bootstrap: [AppComponent],
 })

@@ -24,5 +24,6 @@ const SONGS: Song[] = [
 export const ALBUM_DATA: Album = {
   year: 1999,
   title: 'Live At Fire Australia',
+  imageUrl: 'https://picsum.photos/200/300',
   songs: SONGS,
 };

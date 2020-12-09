@@ -2,14 +2,20 @@ import { Injectable } from '@angular/core';
 import { Album } from '../models/album.model';
 import { ALBUM_DATA } from '../models/mocks/album-data.mock';
 import { Song } from '../models/song.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AlbumDataService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  private readonly baseUrl: string = 'http://localhost:1337';
 
   // 1. get all data
-  getAllAlbum(): Album {
-    return ALBUM_DATA;
+  getAllAlbum(): Observable<Album> {
+    // <> -> mapping 
+    // T (template) -> Generic
+    return this.http.get<Album>(`${this.baseUrl}/albums`).pipe();
   }
 
   // 2. find song by id (num)
