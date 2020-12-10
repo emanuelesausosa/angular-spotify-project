@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ALBUM_DATA } from '../../common/models/mocks/album-data.mock';
 import { Router } from '@angular/router';
 import { AlbumDataService } from 'src/app/common/services/album-data.service';
 import { Album } from 'src/app/common/models/album.model';
@@ -17,9 +18,9 @@ export class AlbumComponent implements OnInit {
     private albumDataService: AlbumDataService
   ) {}
   ngOnInit(): void {
-    // this.albumModel =
+    // this.albumModel = 
     this.albumDataService.getAllAlbum().subscribe((data) => {
-      this.albumModel = data[0];
+      this.albumModel = data;
     });
   }
 
