@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Song } from 'src/app/common/models/song.model';
-import { ALBUM_DATA } from '../../common/models/mocks/album-data.mock';
 import { ActivatedRoute } from '@angular/router';
 import { Album } from 'src/app/common/models/album.model';
+import { AlbumDataService } from 'src/app/common/services/album-data.service';
 
 @Component({
   selector: 'song-detail',
@@ -11,20 +11,22 @@ import { Album } from 'src/app/common/models/album.model';
 })
 export class SongDetailComponent implements OnInit {
   // OnInit es interface, life-cicle hooks
-  data: Album = ALBUM_DATA;
+  data: Album;
   song: Song;
 
   // vamos a inyectar un servicio -> DI - (Dependency Injection)
-  constructor(private activedRoute: ActivatedRoute) {}
+  constructor(
+    private activedRoute: ActivatedRoute,
+    private albumService: AlbumDataService
+  ) {}
 
   ngOnInit(): void {
     const id = Number.parseInt(this.activedRoute.snapshot.paramMap.get('id'));
     console.log(id);
 
-    // busqueda
-    // find me devuelve singular
-    // filter, buscar criterios y devuelve un arreglo
-    this.song = this.data.songs.find((t) => t.num === id);
-    console.log(this.song);
+    this.albumService.getAllAlbum().subscribe((album) => {
+      this.song = album[0].songs.find((t) => t.num == id);
+      console.log(this.song);
+    });
   }
 }
