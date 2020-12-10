@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Song } from 'src/app/common/models/song.model';
-import { ALBUM_DATA } from '../../common/models/mocks/album-data.mock';
 import { ActivatedRoute } from '@angular/router';
 import { Album } from 'src/app/common/models/album.model';
 
@@ -11,7 +10,7 @@ import { Album } from 'src/app/common/models/album.model';
 })
 export class SongDetailComponent implements OnInit {
   // OnInit es interface, life-cicle hooks
-  data: Album = ALBUM_DATA;
+  data: Album;
   song: Song;
 
   // vamos a inyectar un servicio -> DI - (Dependency Injection)

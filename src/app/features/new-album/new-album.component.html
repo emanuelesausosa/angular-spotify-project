@@ -1,0 +1,18 @@
+<form>
+    <div class="form-group">
+        <label for="album-title">Album title</label>
+        <input type="text" class="form-control" id="album-title" name="album-title" placeholder="New Album title"
+            [(ngModel)]="newAlbum.title">
+    </div>
+    <div class="form-group">
+        <label for="album-year">Album year</label>
+        <input type="text" class="form-control" id="album-year" name="album-year" placeholder="New Album year"
+            [(ngModel)]="newAlbum.year">
+    </div>
+    <div class="form-group">
+        <label for="album-image">Image url</label>
+        <input type="text" class="form-control" id="album-image" name="album-image" placeholder="Image url"
+            [(ngModel)]="newAlbum.imageUrl">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="saveNewAlbum()">Create new</button>
+</form>

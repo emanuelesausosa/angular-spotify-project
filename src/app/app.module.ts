@@ -12,6 +12,8 @@ import { NewSongComponent } from './features/new-song/new-song.component';
 import { FormsModule } from '@angular/forms';
 import { AlbumDataService } from './common/services/album-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AlbumListComponent } from './features/album-list/album-list.component';
+import { NewAlbumComponent } from './features/new-album/new-album.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooComponent,
     TestingComponent,
     NewSongComponent,
+    AlbumListComponent,
+    NewAlbumComponent,
   ],
   imports: [
     BrowserModule,

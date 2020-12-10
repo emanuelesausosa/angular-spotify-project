@@ -1,6 +1,7 @@
 import { Album } from '../album.model';
 import { Song } from '../song.model';
 
+/*
 const SONGS: Song[] = [
   {
     num: 1,
@@ -27,3 +28,5 @@ export const ALBUM_DATA: Album = {
   imageUrl: 'https://picsum.photos/200/300',
   songs: SONGS,
 };
+
+*/

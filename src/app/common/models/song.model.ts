@@ -5,7 +5,7 @@ export interface Song {
   featuring: string;
   description: string;
   albumId: number;
-  published_at: Date;
-  created_at: Date;
-  updated_at: Date;
+  published_at?: Date;
+  created_at?: Date;
+  updated_at?: Date;
 }
