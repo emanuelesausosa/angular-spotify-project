@@ -26,14 +26,20 @@
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
                 <th scope="col">Featuring</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let song of albumModel.songs" (click)="viewSongDetail(song)">
+            <tr *ngFor="let song of albumModel.songs">
                 <th scope="row">{{song.num}}</th>
                 <td><a [routerLink]="['/song', song.num]">{{song.title}}</a></td>
                 <td>{{song.featuring}}</td>
+                <td><button class="btn btn-primary" (click)="openModal(content, song)">View detail</button></td>
             </tr>
         </tbody>
     </table>
 </div>
+
+<ng-template #content let-modal>
+    <song-detail-modal [songDetail]="songDetailSelect"></song-detail-modal>
+</ng-template>

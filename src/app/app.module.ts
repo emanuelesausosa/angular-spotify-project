@@ -14,6 +14,7 @@ import { AlbumDataService } from './common/services/album-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AlbumListComponent } from './features/album-list/album-list.component';
 import { NewAlbumComponent } from './features/new-album/new-album.component';
+import { SongDetailModalComponent } from './features/song-detail-modal/song-detail-modal.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NewAlbumComponent } from './features/new-album/new-album.component';
     NewSongComponent,
     AlbumListComponent,
     NewAlbumComponent,
+    SongDetailModalComponent,
   ],
   imports: [
     BrowserModule,
