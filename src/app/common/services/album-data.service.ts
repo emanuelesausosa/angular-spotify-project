@@ -1,38 +1,32 @@
 import { Injectable } from '@angular/core';
 import { Album } from '../models/album.model';
-import { ALBUM_DATA } from '../models/mocks/album-data.mock';
 import { Song } from '../models/song.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AlbumDataService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   // 1. get all data
-  getAllAlbum(): Album {
-    return ALBUM_DATA;
+  getAllAlbum(): Observable<Album[]> {
+    // <> -> mapping
+    // T (template) -> Generic
+    return this.http.get<Album[]>(`${environment.apiServer}/albums`).pipe();
+  }
+
+  addNewAlbum(album: Album): Observable<Album> {
+    return this.http.post<Album>(`${environment.apiServer}/albums`, album);
   }
 
   // 2. find song by id (num)
   getSongById(id: number): Song {
-    return ALBUM_DATA.songs.find((t) => t.num === id);
+    return null;
   }
 
   // 3. add new song to data
   addNewSong(song: Song): boolean {
-    // buscar dentro de ALBUM_DATA la última song
-    // -: obtendremos el id de la ultima son
-    try {
-      let lastId =
-        ALBUM_DATA.songs.length === 0
-          ? 0
-          : ALBUM_DATA.songs[ALBUM_DATA.songs.length - 1].num;
-      song.num = lastId + 1;
-      ALBUM_DATA.songs.push(song);
-
-      return true;
-    } catch (err) {
-      console.error(err);
-      return false;
-    }
+    return true;
   }
 }

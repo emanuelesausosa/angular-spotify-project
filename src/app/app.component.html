@@ -1,12 +1,14 @@
 <div class="jumbotron">
     <h2>Clon spotify</h2>
-    <a [routerLink]="['album']">Go to Albums</a>
+    <a [routerLink]="['all-albums']">Go to Albums</a>
     <br>
     <a [routerLink]="['foo']">Go to Foo</a>
     <br>
     <a routerLink="/testing" routerLinkActive="active">Testing component</a>
     <br>
     <a routerLink="/new-song">Add new song</a>
+    <br>
+    <a routerLink="/new-album">Add new album</a>
 </div>
 <div class="container">
     <router-outlet></router-outlet>

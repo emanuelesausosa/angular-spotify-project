@@ -8,10 +8,12 @@ import { AlbumDataService } from 'src/app/common/services/album-data.service';
 })
 export class NewSongComponent {
   song: Song = {
+    id: 0,
     num: 0,
     title: '',
     description: '',
     featuring: '',
+    albumId: 0,
   };
 
   constructor(private albumDataService: AlbumDataService) {}
